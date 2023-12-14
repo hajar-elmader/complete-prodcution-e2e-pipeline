@@ -25,5 +25,11 @@ pipeline {
                 sh "mvn clean package"
             }
         }
+
+         stage("Test Application") {
+            steps {
+                sh "mvn test"
+            }
+        }
     }
 }
