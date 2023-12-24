@@ -37,12 +37,12 @@ environment {
             }
         }
 
-         stage("Test Application") {
+        stage("Test Application") {
             steps {
                 sh "mvn test"
             }
         }
-         stage("Sonarqube Analysis") {
+        stage("Sonarqube Analysis") {
             steps {
                 script {
                     withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') {
@@ -60,7 +60,7 @@ environment {
             }
 
         }
-     stage("Build & Push Docker Image") {
+        stage("Build & Push Docker Image") {
             steps {
                 script {
                     docker.withRegistry('',DOCKER_PASS) {
